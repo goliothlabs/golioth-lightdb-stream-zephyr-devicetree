@@ -1,0 +1,9 @@
+sample:
+  description: Send data to Golioth Light DB stream based on sensors on Device Tree
+  name: lightdb stream
+common:
+  harness: net
+  platform_allow: esp32 qemu_cortex_m3 qemu_x86 nrf52840dk_nrf52840 thingy91_nrf9160_ns circuitdojo_feather_nrf9160_ns
+  tags: golioth net socket
+tests:
+  sample.golioth.lightdb_stream: {}

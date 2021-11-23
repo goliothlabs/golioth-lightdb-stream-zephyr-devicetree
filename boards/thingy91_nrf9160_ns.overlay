@@ -1,0 +1,47 @@
+/*
+ * Copyright (C) 2021 Golioth, Inc.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/ {
+  aliases {
+    temp0 = &bme680;
+    hum0 = &bme680;
+    press0 = &bme680;
+    gas0 = &bme680;
+    accel0 = &adxl362;
+  };
+};
+
+&i2c2 {
+  bme680: bme680@76 {
+    compatible = "bosch,bme680";
+    label = "BME680";
+    reg = <0x76>;
+  };
+
+  bh1749: bh1749@38 {
+    compatible = "rohm,bh1749";
+    label = "BH1749";
+    reg = <0x38>;
+    int-gpios = <&gpio0 27 0>;
+  };
+};
+
+&spi3 {
+  adxl362: adxl362@0 {
+    compatible = "adi,adxl362";
+    label = "ADXL362";
+    spi-max-frequency = <8000000>;
+    reg = <0>;
+    int1-gpios = <&gpio0 9 0>;
+  };
+
+  /*adxl372@1 {
+    compatible = "adi,adxl372";
+    label = "ADXL372";
+    spi-max-frequency = <8000000>;
+    reg = <1>;
+    int1-gpios = <&gpio0 6 0>;
+  };*/
+};
