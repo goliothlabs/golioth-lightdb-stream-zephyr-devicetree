@@ -1,13 +1,12 @@
-Golioth Light DB stream sample
+Extended Golioth Light DB Stream Sample - Get Device Tree Sensors and build CBOR payload
 ##############################
 
 Overview
 ********
 
-This Light DB stream application demonstrates how to connect with Golioth and
-periodically send data to Light DB stream. In this sample temperature
-measurements are sent to ``/temp`` Light DB stream path. For platforms that do
-not have temperature sensor a value is generated from 20 up to 30.
+This sample extended the basic Light DB stream application, that demonstrates how to connect with Golioth and
+periodically send data to Light DB stream. In this sample, it gets sensors from the Zephyr Device Tree and dynamically build a CBOR payload
+to be send as measurements to ``/sensor`` Light DB Stream path.
 
 Requirements
 ************
